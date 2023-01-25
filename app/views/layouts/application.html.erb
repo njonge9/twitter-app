@@ -8,9 +8,26 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <!--[if lt IE 9]>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <![endif]-->
   </head>
 
   <body>
-    <%= yield %>
+    <header class='navbar navbar-fixed-top navbar-inverse'>
+      <div class='container'>
+        <%= link_to 'Sample App', '#' ,id: 'logo' %>
+        <nav>
+          <ul class='nav navbar-nav navbar-right'>
+            <li><%= link_to 'Home', '#' %></li>
+            <li><%= link_to 'Help', '#' %></li>
+            <li><%= link_to 'Log in', '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class='container'>
+      <%= yield %>
+    </div>
   </body>
 </html>
